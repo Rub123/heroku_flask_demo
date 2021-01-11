@@ -14,6 +14,11 @@ with open('tree_model.pickle', 'rb') as f:
 keys = ['sepal_len', 'sepal_width', 'petal_len', 'petal_width']
 
 
+@app.route('/')
+def index():
+    return 'Welcome to The Iris prediction demo'
+
+
 @app.route('/iris/predict_single')
 def predict_single():
     if any(key not in request.args for key in keys):
